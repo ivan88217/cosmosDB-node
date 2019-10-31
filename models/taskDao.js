@@ -13,12 +13,11 @@ function TaskDao(documentDBClient, databaseId, collectionId) {
 module.exports = TaskDao;
 
 TaskDao.prototype = {
-    init: function (callback) {
+    init: function (callback = console.log) {
         var self = this;
 
         docdbUtils.getOrCreateDatabase(self.client, self.databaseId, function (err, db) {
             if (err) {
-
                 callback(err);
             } else {
                 self.database = db;
