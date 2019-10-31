@@ -18,6 +18,7 @@ TaskDao.prototype = {
 
         docdbUtils.getOrCreateDatabase(self.client, self.databaseId, function (err, db) {
             if (err) {
+
                 callback(err);
             } else {
                 self.database = db;
